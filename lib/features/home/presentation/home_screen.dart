@@ -4,6 +4,7 @@ import 'package:smena_demo/common/navigation/home_tabs.dart';
 import 'package:smena_demo/common/navigation/routes.dart';
 import 'package:smena_demo/features/cart/presentation/cart_screen.dart';
 import 'package:smena_demo/features/menu/presentation/menu_screen.dart';
+import 'package:smena_demo/l10n/app_sctrings.dart';
 
 class HomeScreen extends StatefulWidget {
   final int index;
@@ -33,9 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: 'Еда'),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Корзина'),
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.account_balance),
+            label: AppStrings.of(context).homeMenuTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.shopping_cart),
+            label: AppStrings.of(context).homeCartTab,
+          ),
         ],
         backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
