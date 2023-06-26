@@ -369,10 +369,10 @@ packages:
     dependency: "direct main"
     description:
       name: hive
-      sha256: "6eed8f806f7b3db21c9bd059ee12dc87da8a9809207541e662b82df3af755abf"
+      sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "2.2.3"
   hive_flutter:
     dependency: "direct main"
     description:
