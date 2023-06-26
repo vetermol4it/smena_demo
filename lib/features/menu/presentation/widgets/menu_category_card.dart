@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:smena_demo/common/models/menu_category.dart';
+import 'package:smena_demo/common/navigation/routes.dart';
 import 'package:smena_demo/common/ui_kit/app_colors.dart';
 import 'package:smena_demo/common/ui_kit/widgets/app_interaction_detector.dart';
 
@@ -14,7 +16,9 @@ class MenuCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppInteractionDetector(
-      onTap: () {},
+      onTap: () {
+        context.goNamed(Routes.category, extra: item);
+      },
       child: Container(
         width: double.maxFinite,
         height: 175,
@@ -57,7 +61,7 @@ class MenuCategoryCard extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

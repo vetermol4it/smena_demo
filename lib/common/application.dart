@@ -11,8 +11,7 @@ class Application extends StatelessWidget {
     return Builder(builder: (context) {
       final router = getIt<AppRouter>().router;
       return MaterialApp.router(
-        routeInformationParser: router.routeInformationParser,
-        routerDelegate: router.routerDelegate,
+        routerConfig: router,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

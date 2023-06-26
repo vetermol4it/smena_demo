@@ -33,6 +33,8 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
@@ -63,10 +65,11 @@ class _MenuScreenState extends State<MenuScreen> {
                 vertical: 10,
               ),
               itemCount: state.categories.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
+                childAspectRatio: (screenWidth / 2 - 20) / 175,
               ),
               itemBuilder: (context, index) => MenuCategoryCard(
                 item: state.categories[index],
