@@ -162,14 +162,15 @@ class __$$_MenuItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MenuItem implements _MenuItem {
+class _$_MenuItem extends _MenuItem {
   const _$_MenuItem(
       {required this.id,
       required this.name,
       @JsonKey(name: 'image_url') required this.imageUrl,
       required this.cost,
       required this.sizes,
-      required this.description});
+      required this.description})
+      : super._();
 
   factory _$_MenuItem.fromJson(Map<String, dynamic> json) =>
       _$$_MenuItemFromJson(json);
@@ -188,31 +189,6 @@ class _$_MenuItem implements _MenuItem {
   @override
   final String description;
 
-  @override
-  String toString() {
-    return 'MenuItem(id: $id, name: $name, imageUrl: $imageUrl, cost: $cost, sizes: $sizes, description: $description)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_MenuItem &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl) &&
-            (identical(other.cost, cost) || other.cost == cost) &&
-            (identical(other.sizes, sizes) || other.sizes == sizes) &&
-            (identical(other.description, description) ||
-                other.description == description));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, imageUrl, cost, sizes, description);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -227,7 +203,7 @@ class _$_MenuItem implements _MenuItem {
   }
 }
 
-abstract class _MenuItem implements MenuItem {
+abstract class _MenuItem extends MenuItem {
   const factory _MenuItem(
       {required final int id,
       required final String name,
@@ -235,6 +211,7 @@ abstract class _MenuItem implements MenuItem {
       required final int cost,
       required final String sizes,
       required final String description}) = _$_MenuItem;
+  const _MenuItem._() : super._();
 
   factory _MenuItem.fromJson(Map<String, dynamic> json) = _$_MenuItem.fromJson;
 

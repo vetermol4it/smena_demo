@@ -1,10 +1,13 @@
+import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'menu_item.freezed.dart';
 part 'menu_item.g.dart';
 
 @freezed
-class MenuItem with _$MenuItem {
+class MenuItem extends Equatable with _$MenuItem {
+  const MenuItem._();
+
   const factory MenuItem({
     required int id,
     required String name,
@@ -15,4 +18,7 @@ class MenuItem with _$MenuItem {
   }) = _MenuItem;
 
   factory MenuItem.fromJson(Map<String, Object?> json) => _$MenuItemFromJson(json);
+
+  @override
+  List<Object> get props => [id];
 }
