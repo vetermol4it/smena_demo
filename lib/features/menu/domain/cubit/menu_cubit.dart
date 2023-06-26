@@ -10,10 +10,10 @@ class MenuCubit extends Cubit<MenuState> {
 
   final IMenuRepository _repository;
 
-  void fetchCategories() async {
+  void fetchMenu() async {
     emit(MenuLoadingState());
     try {
-      final result = await _repository.fetchCategories();
+      final result = await _repository.fetchMenu();
       emit(MenuReadyState(categories: result));
     } catch (e) {
       Logger().e(e);
