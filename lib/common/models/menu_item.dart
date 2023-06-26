@@ -8,7 +8,7 @@ class MenuItem with _$MenuItem {
   const factory MenuItem({
     required int id,
     required String name,
-    required String imageUrl,
+    @JsonKey(name: 'image_url') required String imageUrl,
     required int cost,
     required String sizes,
     required String description,

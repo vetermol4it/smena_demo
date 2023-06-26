@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:smena_demo/features/menu/data/api_client/menu_api_routes.dart';
@@ -8,9 +10,8 @@ class MenuApiClient {
 
   MenuApiClient(this._dio);
 
-  Future<List<Map<String, dynamic>>> fetchMenu() async {
+  Future<List> fetchMenu() async {
     final result = await _dio.get(MenuApiRoutes.fetchMenu);
-
-    return result.data;
+    return jsonDecode(result.data);
   }
 }

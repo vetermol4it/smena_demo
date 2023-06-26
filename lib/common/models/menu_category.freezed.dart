@@ -21,6 +21,7 @@ MenuCategory _$MenuCategoryFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MenuCategory {
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_url')
   String get imageUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_name')
   String get name => throw _privateConstructorUsedError;
@@ -40,7 +41,7 @@ abstract class $MenuCategoryCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String imageUrl,
+      @JsonKey(name: 'image_url') String imageUrl,
       @JsonKey(name: 'category_name') String name,
       List<MenuItem> products});
 }
@@ -94,7 +95,7 @@ abstract class _$$_MenuCategoryCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      String imageUrl,
+      @JsonKey(name: 'image_url') String imageUrl,
       @JsonKey(name: 'category_name') String name,
       List<MenuItem> products});
 }
@@ -141,7 +142,7 @@ class __$$_MenuCategoryCopyWithImpl<$Res>
 class _$_MenuCategory implements _MenuCategory {
   const _$_MenuCategory(
       {required this.id,
-      required this.imageUrl,
+      @JsonKey(name: 'image_url') required this.imageUrl,
       @JsonKey(name: 'category_name') required this.name,
       required final List<MenuItem> products})
       : _products = products;
@@ -152,6 +153,7 @@ class _$_MenuCategory implements _MenuCategory {
   @override
   final int id;
   @override
+  @JsonKey(name: 'image_url')
   final String imageUrl;
   @override
   @JsonKey(name: 'category_name')
@@ -203,7 +205,7 @@ class _$_MenuCategory implements _MenuCategory {
 abstract class _MenuCategory implements MenuCategory {
   const factory _MenuCategory(
       {required final int id,
-      required final String imageUrl,
+      @JsonKey(name: 'image_url') required final String imageUrl,
       @JsonKey(name: 'category_name') required final String name,
       required final List<MenuItem> products}) = _$_MenuCategory;
 
@@ -213,6 +215,7 @@ abstract class _MenuCategory implements MenuCategory {
   @override
   int get id;
   @override
+  @JsonKey(name: 'image_url')
   String get imageUrl;
   @override
   @JsonKey(name: 'category_name')

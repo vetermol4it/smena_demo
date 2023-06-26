@@ -8,7 +8,7 @@ part 'menu_category.g.dart';
 class MenuCategory with _$MenuCategory {
   const factory MenuCategory({
     required int id,
-    required String imageUrl,
+    @JsonKey(name: 'image_url') required String imageUrl,
     @JsonKey(name: 'category_name') required String name,
     required List<MenuItem> products,
   }) = _MenuCategory;

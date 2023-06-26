@@ -9,7 +9,7 @@ part of 'menu_category.dart';
 _$_MenuCategory _$$_MenuCategoryFromJson(Map<String, dynamic> json) =>
     _$_MenuCategory(
       id: json['id'] as int,
-      imageUrl: json['imageUrl'] as String,
+      imageUrl: json['image_url'] as String,
       name: json['category_name'] as String,
       products: (json['products'] as List<dynamic>)
           .map((e) => MenuItem.fromJson(e as Map<String, dynamic>))
@@ -19,7 +19,7 @@ _$_MenuCategory _$$_MenuCategoryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_MenuCategoryToJson(_$_MenuCategory instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'imageUrl': instance.imageUrl,
+      'image_url': instance.imageUrl,
       'category_name': instance.name,
       'products': instance.products,
     };

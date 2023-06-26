@@ -17,23 +17,26 @@ class AppInteractionDetector extends StatefulWidget {
 class _AppInteractionDetectorState extends State<AppInteractionDetector> {
   bool _isTapped = false;
 
+  final _animDuration = const Duration(milliseconds: 100);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapDown: (_) {
+      onTap: () async {
         setState(() {
           _isTapped = true;
         });
-      },
-      onTapUp: (_) {
+        await Future.delayed(_animDuration);
         setState(() {
           _isTapped = false;
         });
+        await Future.delayed(_animDuration);
+
         widget.onTap();
       },
       child: AnimatedScale(
-        duration: const Duration(milliseconds: 200),
-        scale: _isTapped ? 0.9 : 1,
+        duration: _animDuration,
+        scale: _isTapped ? 0.95 : 1,
         child: widget.child,
       ),
     );

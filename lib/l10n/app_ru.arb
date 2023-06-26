@@ -1,4 +1,7 @@
 {
   "homeMenuTab": "Еда",
-  "homeCartTab": "Корзина"
+  "homeCartTab": "Корзина",
+  "menuErrorBodyTitle": "Упc... Что то пошло не так",
+  "menuErrorBodyButtonTitle": "Попробовать снова",
+  "menuScreenTitle": "Категории"
 }

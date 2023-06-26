@@ -22,6 +22,7 @@ MenuItem _$MenuItemFromJson(Map<String, dynamic> json) {
 mixin _$MenuItem {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_url')
   String get imageUrl => throw _privateConstructorUsedError;
   int get cost => throw _privateConstructorUsedError;
   String get sizes => throw _privateConstructorUsedError;
@@ -41,7 +42,7 @@ abstract class $MenuItemCopyWith<$Res> {
   $Res call(
       {int id,
       String name,
-      String imageUrl,
+      @JsonKey(name: 'image_url') String imageUrl,
       int cost,
       String sizes,
       String description});
@@ -106,7 +107,7 @@ abstract class _$$_MenuItemCopyWith<$Res> implements $MenuItemCopyWith<$Res> {
   $Res call(
       {int id,
       String name,
-      String imageUrl,
+      @JsonKey(name: 'image_url') String imageUrl,
       int cost,
       String sizes,
       String description});
@@ -165,7 +166,7 @@ class _$_MenuItem implements _MenuItem {
   const _$_MenuItem(
       {required this.id,
       required this.name,
-      required this.imageUrl,
+      @JsonKey(name: 'image_url') required this.imageUrl,
       required this.cost,
       required this.sizes,
       required this.description});
@@ -178,6 +179,7 @@ class _$_MenuItem implements _MenuItem {
   @override
   final String name;
   @override
+  @JsonKey(name: 'image_url')
   final String imageUrl;
   @override
   final int cost;
@@ -229,7 +231,7 @@ abstract class _MenuItem implements MenuItem {
   const factory _MenuItem(
       {required final int id,
       required final String name,
-      required final String imageUrl,
+      @JsonKey(name: 'image_url') required final String imageUrl,
       required final int cost,
       required final String sizes,
       required final String description}) = _$_MenuItem;
@@ -241,6 +243,7 @@ abstract class _MenuItem implements MenuItem {
   @override
   String get name;
   @override
+  @JsonKey(name: 'image_url')
   String get imageUrl;
   @override
   int get cost;
