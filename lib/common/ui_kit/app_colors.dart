@@ -13,4 +13,6 @@ abstract class AppColors {
   static const textInverted = Color(0xFFFFFFFF);
 
   static const background = Color(0xFFFFFFFF);
+
+  static const bottomSheetDrag = Color(0xFFD8DEE8);
 }

@@ -20,7 +20,7 @@ class CategoryScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.background,
         shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: AppColors.textPrimary,
         ),
         title: Text(

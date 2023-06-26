@@ -6,9 +6,16 @@ import 'package:smena_demo/common/ui_kit/widgets/app_interaction_detector.dart';
 
 class AddToCardButton extends StatelessWidget {
   final MenuItem item;
+  final String? title;
 
   const AddToCardButton({
     required this.item,
+    super.key,
+  }) : title = null;
+
+  const AddToCardButton.withTitle({
+    required this.item,
+    required this.title,
     super.key,
   });
 
@@ -17,8 +24,8 @@ class AddToCardButton extends StatelessWidget {
     return AppInteractionDetector(
       onTap: () {},
       child: Container(
-        width: 85,
-        height: 36,
+        width: title == null ? 85 : 120,
+        height: title == null ? 36 : 50,
         decoration: ShapeDecoration(
           color: AppColors.buttonPrimary,
           shape: RoundedRectangleBorder(
@@ -33,11 +40,23 @@ class AddToCardButton extends StatelessWidget {
             )
           ],
         ),
-        child: Assets.icons.plus.svg(
-          height: 10,
-          width: 10,
-          fit: BoxFit.scaleDown,
-        ),
+        child: title != null
+            ? Center(
+                child: Text(
+                  title ?? '',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: AppColors.textInverted,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              )
+            : Assets.icons.plus.svg(
+                height: 10,
+                width: 10,
+                fit: BoxFit.scaleDown,
+              ),
       ),
     );
   }
