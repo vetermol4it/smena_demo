@@ -6,4 +6,12 @@ class CartState {
   CartState({
     this.items = const [],
   });
+
+  int get sum {
+    int result = 0;
+    for (var item in items) {
+      result += item.count * item.product.cost;
+    }
+    return result;
+  }
 }

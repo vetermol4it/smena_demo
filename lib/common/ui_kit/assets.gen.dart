@@ -17,14 +17,23 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart_decrement.svg
   SvgGenImage get cartDecrement => const SvgGenImage('assets/icons/cart_decrement.svg');
 
+  /// File path: assets/icons/cart_empty.svg
+  SvgGenImage get cartEmpty => const SvgGenImage('assets/icons/cart_empty.svg');
+
+  /// File path: assets/icons/cart_full.svg
+  SvgGenImage get cartFull => const SvgGenImage('assets/icons/cart_full.svg');
+
   /// File path: assets/icons/cart_increment.svg
   SvgGenImage get cartIncrement => const SvgGenImage('assets/icons/cart_increment.svg');
+
+  /// File path: assets/icons/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/icons/menu.svg');
 
   /// File path: assets/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/icons/plus.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [cartDecrement, cartIncrement, plus];
+  List<SvgGenImage> get values => [cartDecrement, cartEmpty, cartFull, cartIncrement, menu, plus];
 }
 
 class Assets {
