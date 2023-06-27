@@ -4,5 +4,7 @@
   "menuErrorBodyTitle": "Упc... Что то пошло не так",
   "menuErrorBodyButtonTitle": "Попробовать снова",
   "menuScreenTitle": "Категории",
-  "addToCartButtonTitle" : "Хочу!"
+  "addToCartButtonTitle": "Хочу!",
+  "cartScreenTitle": "Корзина",
+  "emptyCartPlaceholder": "Корзина пока пуста"
 }

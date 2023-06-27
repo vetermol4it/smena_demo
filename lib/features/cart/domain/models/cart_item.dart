@@ -6,8 +6,10 @@ part 'cart_item.g.dart';
 
 @freezed
 class CartItem with _$CartItem {
-  const factory CartItem({
-    @Default(0) int count,
+  CartItem._();
+
+  factory CartItem({
+    @Default(1) int count,
     required MenuItem product,
   }) = _CartItem;
 

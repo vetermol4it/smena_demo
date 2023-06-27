@@ -10,8 +10,22 @@ class CartRepository implements ICartRepository {
   CartRepository(this._storage);
 
   @override
-  Future<List<CartItem>> fetchItems() => _storage.fetchItems();
+  Future<List<CartItem>> fetchItems() async {
+    final itemsMapsList = await _storage.fetchItems();
+    List<CartItem> result = [];
+    for (var itemMap in itemsMapsList) {
+      result.add(CartItem.fromJson(itemMap));
+    }
+
+    return result;
+  }
 
   @override
-  Future<void> saveItems(List<CartItem> items) => _storage.saveItems(items);
+  Future<void> saveItems(List<CartItem> items) {
+    List<Map<String, dynamic>> itemsMapsList = [];
+    for (var item in items) {
+      itemsMapsList.add(item.toJson());
+    }
+    return _storage.saveItems(itemsMapsList);
+  }
 }

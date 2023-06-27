@@ -1,32 +1,28 @@
-import 'package:hive_flutter/hive_flutter.dart';
+import 'dart:convert';
+
 import 'package:injectable/injectable.dart';
-import 'package:smena_demo/features/cart/domain/models/cart_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 @injectable
 class CartStorage {
-  final _boxName = 'cart';
-
   final _itemsKey = 'items';
 
-  Box? _box;
+  final SharedPreferences _sharedPreferences;
 
-  CartStorage() {
-    _init();
-  }
+  CartStorage(this._sharedPreferences);
 
-  Future<void> _init() async {
-    _box = await Hive.openBox<List>(_boxName);
-  }
+  List<Map<String, dynamic>> fetchItems() {
+    final stringList = _sharedPreferences.getStringList(_itemsKey) ?? [];
 
-  Future<List<CartItem>> fetchItems() async {
-    if (_box == null) await _init();
-    final result = _box?.get(_itemsKey) ?? [];
-
+    final List<Map<String, dynamic>> result = [];
+    for (var jsonString in stringList) {
+      result.add(jsonDecode(jsonString));
+    }
     return result;
   }
 
-  Future<void> saveItems(List<CartItem> items) async {
-    if (_box == null) await _init();
-    return _box?.put(_itemsKey, items);
+  Future<void> saveItems(List<Map<String, dynamic>> items) {
+    final stringList = items.map<String>((e) => jsonEncode(e)).toList();
+    return _sharedPreferences.setStringList(_itemsKey, stringList);
   }
 }

@@ -7,7 +7,7 @@ part of 'cart_item.dart';
 // **************************************************************************
 
 _$_CartItem _$$_CartItemFromJson(Map<String, dynamic> json) => _$_CartItem(
-      count: json['count'] as int? ?? 0,
+      count: json['count'] as int? ?? 1,
       product: MenuItem.fromJson(json['product'] as Map<String, dynamic>),
     );
 

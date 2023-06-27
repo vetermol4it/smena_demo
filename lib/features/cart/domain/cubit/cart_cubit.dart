@@ -17,6 +17,7 @@ class CartCubit extends Cubit<CartState> {
 
   void _fetchItems() async {
     items = await _repository.fetchItems();
+    emit(CartState(items: items));
   }
 
   void addItem(MenuItem item) {

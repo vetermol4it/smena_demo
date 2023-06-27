@@ -14,11 +14,17 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/cart_decrement.svg
+  SvgGenImage get cartDecrement => const SvgGenImage('assets/icons/cart_decrement.svg');
+
+  /// File path: assets/icons/cart_increment.svg
+  SvgGenImage get cartIncrement => const SvgGenImage('assets/icons/cart_increment.svg');
+
   /// File path: assets/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/icons/plus.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [plus];
+  List<SvgGenImage> get values => [cartDecrement, cartIncrement, plus];
 }
 
 class Assets {
