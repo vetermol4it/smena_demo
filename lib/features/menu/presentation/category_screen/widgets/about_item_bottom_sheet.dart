@@ -6,9 +6,11 @@ import 'package:smena_demo/l10n/app_sctrings.dart';
 
 class AboutItemBottomSheet extends StatelessWidget {
   final MenuItem item;
+  final VoidCallback onAddButtonTap;
 
   const AboutItemBottomSheet({
     required this.item,
+    required this.onAddButtonTap,
     super.key,
   });
 
@@ -67,6 +69,7 @@ class AboutItemBottomSheet extends StatelessWidget {
                 AddToCardButton.withTitle(
                   title: AppStrings.of(context).addToCartButtonTitle,
                   item: item,
+                  onTap: onAddButtonTap,
                 ),
               ],
             ),

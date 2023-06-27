@@ -7,15 +7,13 @@ import 'package:smena_demo/features/cart/domain/repository/i_cart_repository.dar
 
 @injectable
 class CartCubit extends Cubit<CartState> {
-  CartCubit(this._repository) : super(CartState()) {
-    _fetchItems();
-  }
+  CartCubit(this._repository) : super(CartState());
 
   final ICartRepository _repository;
 
   List<CartItem> items = [];
 
-  void _fetchItems() async {
+  void fetchItems() async {
     items = await _repository.fetchItems();
     emit(CartState(items: items));
   }

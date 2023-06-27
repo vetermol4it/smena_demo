@@ -48,44 +48,6 @@ class AppRouter {
           ),
         ],
       ),
-      // GoRoute(
-      //   name: Routes.root,
-      //   path: '/',
-      //   redirect: (state) => state.namedLocation(Routes.home, params: {'tab': HomeTabs.menu.name}),
-      // ),
-      // GoRoute(
-      //   name: Routes.home,
-      //   path: '/home/:tab(${HomeTabs.menu.name}|${HomeTabs.cart.name})',
-      //   pageBuilder: (context, state) {
-      //     final HomeTabs tab = HomeTabs.fromString(state.params['tab'] ?? HomeTabs.menu.name);
-      //     return MaterialPage<void>(
-      //       key: state.pageKey,
-      //       child: HomeScreen(tab: tab),
-      //     );
-      //   },
-      // ),
-      // GoRoute(
-      //   name: Routes.menu,
-      //   path: '/menu',
-      //   redirect: (state) => state.namedLocation(Routes.home, params: {'tab': HomeTabs.menu.name}),
-      //   routes: [
-      //     GoRoute(
-      //       name: Routes.category,
-      //       path: '/:category',
-      //       pageBuilder: (context, state) {
-      //         return MaterialPage<void>(
-      //           key: state.pageKey,
-      //           child: CategoryScreen(category: state.extra as MenuCategory),
-      //         );
-      //       },
-      //     ),
-      //   ],
-      // ),
-      // GoRoute(
-      //   name: Routes.cart,
-      //   path: '/cart',
-      //   redirect: (state) => state.namedLocation(Routes.home, params: {'tab': HomeTabs.cart.name}),
-      // ),
     ],
   );
 }
