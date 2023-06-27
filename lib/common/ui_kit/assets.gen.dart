@@ -36,10 +36,21 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [cartDecrement, cartEmpty, cartFull, cartIncrement, menu, plus];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/home_banner.png
+  AssetGenImage get homeBanner => const AssetGenImage('assets/images/home_banner.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [homeBanner];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {

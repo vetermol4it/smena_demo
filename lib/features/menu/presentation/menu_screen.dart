@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smena_demo/common/di/init_di.dart';
 import 'package:smena_demo/common/ui_kit/app_colors.dart';
+import 'package:smena_demo/features/banner/presentation/menu_banner.dart';
 import 'package:smena_demo/features/menu/domain/cubit/menu_cubit.dart';
 import 'package:smena_demo/features/menu/domain/cubit/menu_state.dart';
 import 'package:smena_demo/features/menu/presentation/widgets/menu_category_card.dart';
@@ -53,20 +54,32 @@ class _MenuScreenState extends State<MenuScreen> {
               onTryAgain: () => _cubit.fetchMenu(),
             );
           } else if (state is MenuReadyState) {
-            return GridView.builder(
+            return SingleChildScrollView(
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 10,
               ),
-              itemCount: state.categories.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: (screenWidth / 2 - 20) / 175,
-              ),
-              itemBuilder: (context, index) => MenuCategoryCard(
-                item: state.categories[index],
+              child: Column(
+                children: [
+                  const MenuBanner(),
+                  const SizedBox(height: 20),
+                  GridView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: (screenWidth / 2 - 20) / 175,
+                    ),
+                    children: List.generate(
+                      state.categories.length,
+                      (index) => MenuCategoryCard(
+                        item: state.categories[index],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             );
           }
